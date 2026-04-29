@@ -1,0 +1,41 @@
+body{
+    font-family: Arial, sans-serif;
+    font-size: large;
+}
+
+h2{
+    text-align: center;
+}
+
+th, td{
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;
+}
+
+th{
+    background-color: aquamarine;
+}
+
+img{
+    width: 80px;
+    height: 80px;
+}
+
+#productTable{
+    width: 100%;
+    border-collapse: collapse;
+    /* margin: 40px; */
+}
+
+.pagination{
+    text-align: center;
+}
+
+button{
+    padding: 8px 12px;
+    margin: 5px;
+    cursor: pointer;
+
+}
+
