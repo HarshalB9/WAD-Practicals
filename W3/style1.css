@@ -1,0 +1,178 @@
+/* body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+.content{
+    max-width: 70vw;
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2f2f2f, #121212);
+    color: white;
+    border-radius: 40px;
+    margin: 20px;
+}
+
+img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+.card{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.dishcard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.dishcardimage{
+    margin: 10px;
+}
+
+.dishcardinfo{
+    margin: 0 30px;
+    text-align: left;
+}
+
+#menutable{
+    text-align: center;
+    border-collapse: collapse;
+    width: 90%;
+    
+}
+
+th, td{
+    border: 1px solid gray;
+}
+ */
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+/* Better width control */
+.content{
+    max-width: 900px;
+    width: 90%;
+    margin: auto;
+}
+
+/* Flexible sections */
+section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #2f2f2f, #121212);
+    color: white;
+    border-radius: 40px;
+    margin: 20px;
+    padding: 40px 20px; /*important*/
+}
+
+/* Images responsive */
+img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+}
+
+/* Cards */
+.card{
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Dish cards */
+.dishcard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+/* Table fix */
+#menu{
+    overflow-x: auto;  /* IMPORTANT: auto → adds a scrollbar only when needed*/
+}
+
+#menutable{
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 600px; /* prevents breaking */
+}
+
+th, td{
+    border: 1px solid gray;
+    padding: 10px;
+}
+
+/* 🔥 MEDIA QUERY (main responsiveness) */
+@media (max-width: 768px){
+
+    body{
+        font-size: 16px;
+    }
+
+    section{
+        border-radius: 20px;
+        margin: 10px;
+    }
+
+    /* Stack dish cards */
+    .dishcard{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dishcardinfo{
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    /* Smaller images */
+    img{
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px){
+
+    body{
+        font-size: 14px;
+    }
+
+    img{
+        width: 70px;
+        height: 70px;
+    }
+
+}
