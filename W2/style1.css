@@ -1,0 +1,72 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
+}
+
+nav{
+    position: fixed;
+    z-index: 1000;
+    background: rgb(135, 97, 193);
+    text-align: center;
+    width: 100%;
+    top: 0;
+    padding: 10px;
+}
+
+nav a{
+    width: 100%;
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    
+}
+
+nav a:hover{
+    color: aqua;
+}
+
+section{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    border-radius: 60px;
+    margin: 20px;
+}
+
+#about{
+    background: linear-gradient(135deg, orange, aqua);
+}
+
+#skills{
+    background: linear-gradient(135deg, orange, aqua);
+}
+
+#projects{
+    background: linear-gradient(135deg, orange, aqua);
+}
+
+#education{
+    background: linear-gradient(135deg, orange, aqua);
+}
+
+#contact{
+    background: linear-gradient(135deg, orange, aqua);
+}
+
+.content{
+    max-width: 700px;
+}
+
+@media (max-width: 600px){
+    nav a{
+        display: block;
+        margin: 0 10px;
+    }
+}

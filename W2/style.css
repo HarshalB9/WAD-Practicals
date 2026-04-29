@@ -1,0 +1,88 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: x-large;
+    /* padding: 20px; */
+}
+
+/* Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    padding: 12px;
+    text-align: center;
+    z-index: 1000; /*Ensure navbar is above other content */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #00c6ff;
+}
+
+/* Full screen sections */
+section {
+    height: 100vh; /* FULL SCREEN */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border-radius: 50px;
+    margin: 50px;
+}
+
+/* Content box */
+.content {
+    max-width: 700px;
+}
+
+/* Gradients for each section */
+#about {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+}
+
+#skills {
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+}
+
+#projects {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+}
+
+#education {
+    background: linear-gradient(135deg, #8360c3, #2ebf91);
+}
+
+#contact {
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    /* backdrop-filter: blur(5px); */
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 0 10px;
+    }
+}
