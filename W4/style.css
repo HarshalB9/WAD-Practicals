@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    color: #1f2933;
+    background: #f7f9fc;
+    line-height: 1.6;
+}
+
+section {
+    min-height: 100vh;   /* Full screen height */
+    padding: 70px 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.section-content {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+}
+
+/* Minimal gradients */
+.home {
+    background: linear-gradient(120deg, #c7d2fe, #e0f2fe 55%, #ffffff 100%);
+}
+
+.paths {
+    background: linear-gradient(120deg, #bae6fd, #ccfbf1 55%, #ffffff 100%);
+}
+
+.categories {
+    background: linear-gradient(120deg, #fecdd3, #fef3c7 55%, #ffffff 100%);
+}
+
+.courses {
+    background: linear-gradient(120deg, #ddd6fe, #e2e8f0 55%, #ffffff 100%);
+}
+
+h1 {
+    font-size: 42px;
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Learning paths */
+ul {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    width: 100%;
+    max-width: 700px;
+}
+
+li {
+    padding: 14px 16px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+}
+
+/* Categories */
+.category-box {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-box div {
+    background: #111827;
+    color: #ffffff;
+    padding: 12px 18px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+/* Table */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.1);
+    background: #ffffff;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 800px;
+    background: white;
+}
+
+th, td {
+    border: 1px solid #e2e8f0;
+    padding: 12px 14px;
+    text-align: center;
+}
+
+th {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    section {
+        padding: 55px 16px;
+    }
+
+    .category-box {
+        flex-direction: column;
+    }
+
+    table {
+        min-width: 520px;
+    }
+}
