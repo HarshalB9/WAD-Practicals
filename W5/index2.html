@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce website</title>
+
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<!-- USE THIS CODE IN PRACTICAL -->
+
+<div class="container-fluid py-5">
+    <div class="row">
+        <aside class="col-lg-3">
+            <div class="sidebar">
+                <h2>Categories</h2>
+
+                <div class="category-list d-flex flex-column">
+                    <label class="category-item">
+                        <input class="category-checkbox" type="checkbox" value="electronics">
+                        <span>Electronics</span>
+                    </label>
+                    <label class="category-item">
+                        <input class="category-checkbox" type="checkbox" value="clothing">
+                        <span>Clothing</span>
+                    </label>
+                    <label class="category-item">
+                        <input class="category-checkbox" type="checkbox" value="books">
+                        <span>Books</span>
+                    </label>
+                </div>
+            </div>
+            
+
+        </aside>
+
+        <section class="col-lg-9">
+
+            <div class="sort-control d-flex justify-content-evenly align-items-center">
+                <h1>Product Gallery</h1>
+
+                <div>
+                    <h6>Sort by</h6>
+                    <select id="sortSelect" class="form-select">
+                        <option value="none">Default</option>
+                        <option value="price">Price: Low to High</option>
+                        <option value="rating">Rating: High to Low</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row g-4" id="productContainer">
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="electronics" data-price="799" data-rating="4.8">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Smartphone</h4>
+                        <h6 class="product-price card-text">Price:799</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.8</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="electronics" data-price="1299" data-rating="4.7">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Laptop</h4>
+                        <h6 class="product-price card-text">Price:1299</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.7</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="electronics" data-price="299" data-rating="4.4">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Headphones</h4>
+                        <h6 class="product-price card-text">Price:299</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.4</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="electronics" data-price="499" data-rating="4.5">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Smartwatch</h4>
+                        <h6 class="product-price card-text">Price:499</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.5</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="clothing" data-price="59" data-rating="4.2">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">T-Shirt</h4>
+                        <h6 class="product-price card-text">Price:59</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.2</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="clothing" data-price="89" data-rating="4.3">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Jeans</h4>
+                        <h6 class="product-price card-text">Price:89</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.3</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="clothing" data-price="120" data-rating="4.6">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Jacket</h4>
+                        <h6 class="product-price card-text">Price:120</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.6</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="clothing" data-price="45" data-rating="4.1">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Shirt</h4>
+                        <h6 class="product-price card-text">Price:45</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.1</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="books" data-price="20" data-rating="4.9">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Novel</h4>
+                        <h6 class="product-price card-text">Price:20</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.9</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="books" data-price="35" data-rating="4.7">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Biography</h4>
+                        <h6 class="product-price card-text">Price:35</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.7</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="books" data-price="25" data-rating="4.5">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Science Book</h4>
+                        <h6 class="product-price card-text">Price:25</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.5</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="books" data-price="30" data-rating="4.3">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">History Book</h4>
+                        <h6 class="product-price card-text">Price:30</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.3</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="electronics" data-price="699" data-rating="4.6">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Tablet</h4>
+                        <h6 class="product-price card-text">Price:699</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.6</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="clothing" data-price="70" data-rating="4.4">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Sweater</h4>
+                        <h6 class="product-price card-text">Price:70</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.4</h6>
+                    </div>
+                </div>
+
+                <div class="product col-lg-3 col-md-4 col-sm-6" data-category="books" data-price="18" data-rating="4.2">
+                    <div class="card h-100 p-3">
+                        <img src="img2.jpg" alt="" class="product-img card-img-top">
+                        <h4 class="product-title card-title">Comics</h4>
+                        <h6 class="product-price card-text">Price:18</h6>
+                        <h6 class="product-rating card-meta">Rating: 4.2</h6>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+    </div>
+    
+</div>
+
+
+    
+
+<script src="script2.js"></script>
+</body>
+</html>

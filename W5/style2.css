@@ -1,0 +1,33 @@
+img{
+    width: 100%;
+    height: 250px;
+    padding: 10px;
+    /* border-radius: 20px; */
+    /* top: 10px; */
+}
+
+body{
+    background: linear-gradient(135deg, rgba(255, 165, 0, 0.7), rgba(255, 255, 0, 0.7));
+    margin: 0px 40px;
+}
+
+.category-list{
+    background: rgb(233, 233, 233);
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+.sort-control{
+    margin: 20px;
+}
+
+.sidebar{
+    /* top or bottom is mandatory with sticky, as it tells the component where to stick */
+    position: sticky;
+    top: 10px; 
+}
+
+.card{
+    border-radius: 20px;
+}
