@@ -1,0 +1,16 @@
+/* Fix for consistent card image sizes */
+        .card-img-top {
+            height: 250px; /* Fixed height for all images */
+            object-fit: cover; /* Crops image to fill area without stretching */
+        }
+
+        /* Ensure the footer doesn't get cut off and has proper spacing */
+        footer {
+            margin-top: 50px;
+            padding: 2rem 0;
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
