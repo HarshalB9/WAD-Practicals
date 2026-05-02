@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><title>Music Manager</title></head>
+<body style="font-family: sans-serif; padding: 20px;">
+    <h1>Music Database Dashboard</h1>
+    <a href="/music/init">1. Reset/Initialize Database</a> | 
+    <a href="/music/all">2. View All Songs</a>
+    <hr>
+
+    <h3>Search Songs (Director/Singer/Film)</h3>
+    <form action="/music/search" method="GET">
+        <input name="director" placeholder="Director">
+        <input name="singer" placeholder="Singer">
+        <input name="film" placeholder="Film">
+        <button type="submit">Search</button>
+    </form>
+
+    <h3>Add New Favorite Song</h3>
+    <form action="/music/add" method="POST">
+        <input name="Songname" placeholder="Song Name" required>
+        <input name="Film" placeholder="Film Name" required>
+        <input name="Music_director" placeholder="Director" required>
+        <input name="Singer" placeholder="Singer" required>
+        <button type="submit">Add Song</button>
+    </form>
+
+    <h3>Update Cast (Actor/Actress)</h3>
+    <form action="/music/update" method="POST">
+        <input name="songName" placeholder="Exact Song Name" required>
+        <input name="actor" placeholder="Actor Name">
+        <input name="actress" placeholder="Actress Name">
+        <button type="submit">Update</button>
+    </form>
+
+    <h3>Delete a Song</h3>
+    <form action="/music/delete" method="POST">
+        <input name="songName" placeholder="Song Name to Delete">
+        <button type="submit">Delete</button>
+    </form>
+</body>
+</html>

@@ -30,17 +30,19 @@ async function loadUsers(){
             // </div>
             // `;
 
+            console.log(user);
+
             li.innerHTML = `
                 <div>
-                <div class="card bg-white shadow-sm my-5 p-4">
-                    <h5 class="card-title">name: ${user.name}</h5>
-
-                    <div class="card-body">
-                        <p class="text-muted">id: ${user.id}</p>
-                        <p class="text-muted">email: ${user.email}</p>
+                    <div class="card bg-white shadow-sm my-5 p-4">
+                        <div class="card-body">
+                            <img src="${user.img}" class="card-img-top">
+                            <h5 class="card-title">name: ${user.name}</h5>
+                            <p class="text-muted">id: ${user.id}</p>
+                            <p class="text-muted">email: ${user.email}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
             `;
 
             userList.appendChild(li);

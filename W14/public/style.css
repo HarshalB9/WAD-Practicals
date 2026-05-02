@@ -1,0 +1,4 @@
+.card-img-top{
+    height: 150px;
+    max-width: 150px;  /* card-img-top has width 100% by default. So we must use max-width, just width:150px doesnt work */
+}
