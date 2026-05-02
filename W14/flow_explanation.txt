@@ -1,0 +1,11 @@
+The Short AnswerYou don't need to "run" index.html on port 5500 because your Node.js server has become the host.When you use Live Server (port 5500), it acts as a simple web server that gives files to your browser. Now, your server.js (port 3000) is doing that job manually. It reads the HTML file from your hard drive and sends it over the network to your browser.
+
+The Execution FlowHere is the step-by-step "life cycle" of your request:
+1. The Initial Request (The "Entry Point")Action: You type http://localhost:3000 in your browser.Server Logic: Inside server.js, your code checks if(req.url === '/').Response: It uses fs.readFile to grab the content of ./public/index.html and sends it to the browser.Result: The browser now has the HTML code and starts rendering it.
+2. Secondary Requests (Assets)Action: The browser reads the HTML and sees <link rel="stylesheet" href="style.css"> and <script src="script.js"></script>.Server Logic: The browser automatically makes two more requests to your server for those specific URLs.Response: Your server.js hits the else if(req.url === '/style.css') and /script.js blocks, sending those files back.
+3. The Data Fetch (The API Call)Action: Once script.js is loaded in the browser, it executes the loadUsers() function.Request: The fetch("/api/users") line sends a request back to your server.Server Logic: Your server hits the else if(req.url === '/api/users') block. It reads users.json from the disk and sends that raw JSON data back.
+4. The DOM Update (The Display)Action: The script.js receives the JSON array.Result: It loops through the data, creates <li> elements, and injects them into the <ul> in your HTML.
+
+Why Port 5500 is now unnecessaryIf you were to open index.html via port 5500 (Live Server) while the Node server is running:The HTML would load from 5500.The JavaScript would try to fetch("/api/users").Because the JS is running on port 5500, it would look for the API at http://localhost:5500/api/users.It would fail (404) because your Live Server doesn't know how to handle API requests—only your Node server on port 3000 knows how to read users.json.
+
+In this architecture, your Node server is a Unified Server: it serves both the Static Files (HTML/CSS/JS) and the API Data (JSON). This is the standard way most modern web applications are structured!
