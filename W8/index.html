@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Event Registration Form</title>
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-sm-12 col-md-10 col-lg-8">
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4 p-md-5">
+            <h1 class="h3 mb-2 text-center">Event Registration</h1>
+            <p class="text-muted text-center mb-4">Fill in your details to register for the event.</p>
+
+            <!-- novalidate (The HTML Attribute) -->
+            <!-- When you add novalidate to a <form> tag, you are telling the browser not to show its default validation UI. -->
+
+            <!-- Default Behavior: Usually, if an input is required and you click submit, the browser (Chrome, Firefox, etc.) pops up a "Please fill out this field" bubble. -->
+
+            <!-- With novalidate: The browser still performs the check (it knows the form is invalid), but it stays silent. It prevents those native bubbles from appearing so they don't clash with your custom Bootstrap styles. -->
+
+
+            <!-- IMP -->
+            <!-- 1. novalidate shuts off the browser's "ugly" default pop-ups.
+
+            2. needs-validation acts as a marker for your JavaScript to find the form.
+
+            3. JavaScript intercepts the submit event, checks if the data is correct, and then adds a new class: .was-validated.
+
+            4. Bootstrap CSS sees .was-validated and suddenly turns all empty required fields red and all correctly filled fields green. -->
+            <form class="row g-3 needs-validation" novalidate>
+                
+              <div class="col-md-6">
+                <!--data-bs-toggle="tooltip". Tooltips are small pop-up boxes that appear when a user hovers over an element. -->
+                <!--data-bs-placement="top": Tells Bootstrap to show the hint above the input. -->
+                <!--title="...": This is the actual text that will appear inside the tooltip. -->
+                
+               <div class="form-floating">  <!-- "Floating Label" effect.Once you click or type, the label shrinks and moves to the top of the input. -->
+                  <input type="text" class="form-control" id="firstName" placeholder="First Name" required data-bs-toggle="tooltip" data-bs-placement="top" title="Enter your given name" />
+                  <label for="firstName">First Name</label>
+                  <!-- invalid-feedback: This div contains the error message. It is hidden by default and only appears if the input fails validation. -->
+                  <div class="invalid-feedback">First name is required.</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="lastName" placeholder="Last Name" required data-bs-toggle="tooltip" data-bs-placement="top" title="Enter your family name" />
+                  <label for="lastName">Last Name</label>
+                  <div class="invalid-feedback">Last name is required.</div>
+                </div>
+              </div>
+
+              <!-- You used email, tel, date, and number. These trigger the correct keyboard on mobile devices (e.g., the tel type brings up the number pad). -->   
+
+              <div class="col-12">
+                <div class="form-floating">
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com" required data-bs-toggle="tooltip" data-bs-placement="top" title="Use a valid email address" />
+                  <label for="email">Email Address</label>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="tel" class="form-control" id="phone" placeholder="Phone Number" pattern="^[0-9]{10}$" required data-bs-toggle="tooltip" data-bs-placement="top" title="Enter 10-digit mobile number"/>
+                  <label for="phone">Phone Number</label>
+                  <div class="invalid-feedback">Enter a valid 10-digit phone number.</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <select class="form-select" id="eventType" required data-bs-toggle="tooltip" data-bs-placement="top" title="Select your preferred event track">
+                    <option value="" selected disabled>Choose...</option>
+                    <option>Web Development Workshop</option>
+                    <option>AI & ML Bootcamp</option>
+                    <option>Cloud Computing Seminar</option>
+                  </select>
+                  <label for="eventType">Event Type</label>
+                  <div class="invalid-feedback">Please choose an event type.</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="date" class="form-control" id="eventDate" required data-bs-toggle="tooltip" data-bs-placement="top" title="Pick the date you will attend" />
+                  <label for="eventDate">Event Date</label>
+                  <div class="invalid-feedback">Please select an event date.</div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="number" class="form-control" id="tickets" placeholder="Tickets" min="1" max="5" required data-bs-toggle="tooltip" data-bs-placement="top" title="You can book between 1 to 5 tickets" />
+                  <label for="tickets">Number of Tickets</label>
+                  <div class="invalid-feedback">Choose between 1 and 5 tickets.</div>
+                </div>
+              </div>
+
+              <!-- textarea la type nasto -->
+              <div class="col-12">
+                <div class="form-floating">
+                  <textarea class="form-control" id="notes" placeholder="Additional Notes" style="height: 110px" data-bs-toggle="tooltip" data-bs-placement="top" title="Optional: dietary or accessibility requirements"></textarea>
+                  <label for="notes">Additional Notes (Optional)</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="terms" required />
+                  <label class="form-check-label" for="terms">I agree to the terms and conditions.</label>
+                  <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+              </div>
+
+              <div class="col-12 d-grid">
+                <button class="btn btn-primary btn-lg" type="submit">Register Now</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+
+    // 1. Initialize Tooltips (Keep this part)
+    const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+    tooltipTriggerList.map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
+
+    // 2. Simplified Validation for a single form
+    const registrationForm = document.querySelector('.needs-validation');
+
+    registrationForm.addEventListener('submit', (event) => {
+        // Check if the form is valid based on HTML5 attributes (required, pattern, etc.)
+        // checkValidity(): This is a built-in browser function. It checks if the required fields are filled, if the email format is correct, and if the phone number matches your pattern="^[0-9]{10}$".
+        if (!registrationForm.checkValidity()) {
+            event.preventDefault();    // Stop the form from submitting
+            event.stopPropagation();   // Stop the event from bubbling up
+        }
+
+        // Add the Bootstrap class that triggers the green/red visual styles
+        // was-validated: This is the most important part. Once this class is added to the <form>, Bootstrap’s CSS kicks in:
+        // Valid fields get a green border and a checkmark.
+        // Invalid fields get a red border and show the text inside the .invalid-feedback div.
+        registrationForm.classList.add('was-validated');
+    });
+    
+  </script>
+</body>
+</html>

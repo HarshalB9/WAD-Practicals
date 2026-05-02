@@ -6,3 +6,7 @@ html{
     height: 250px;
     object-fit: cover;
 }
+
+.card:hover{
+    transform: translateY(-4px);
+}
