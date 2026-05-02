@@ -55,3 +55,6 @@ async function loadUsers(){
 }
 
 loadUsers();
+
+// Check for updates every 5 seconds
+// setInterval(loadUsers, 5000);
