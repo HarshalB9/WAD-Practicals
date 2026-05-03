@@ -1,13 +1,51 @@
 const Song = require('../models/Song');
 
 // Display All Table Helper
+// const renderTable = async (res, songs, message = "") => {
+//     let html = `<h3>${message}</h3><table border="1" style="width:100%; border-collapse: collapse;">
+//         <tr style="background-color: #eee;">
+//             <th>Song</th><th>Film</th><th>Director</th><th>Singer</th><th>Actor</th><th>Actress</th>
+//         </tr>
+//         ${songs.map(s => `<tr><td>${s.Songname}</td><td>${s.Film}</td><td>${s.Music_director}</td><td>${s.Singer}</td><td>${s.Actor}</td><td>${s.Actress}</td></tr>`).join('')}
+//     </table><br><a href="/">Back to Dashboard</a>`;
+//     res.send(html);
+// };
+
 const renderTable = async (res, songs, message = "") => {
-    let html = `<h3>${message}</h3><table border="1" style="width:100%; border-collapse: collapse;">
-        <tr style="background-color: #eee;">
-            <th>Song</th><th>Film</th><th>Director</th><th>Singer</th><th>Actor</th><th>Actress</th>
+    // Generate the table rows by mapping through the songs array
+    const tableRows = songs.map(s => `
+        <tr>
+            <td>${s.Songname}</td>
+            <td>${s.Film}</td>
+            <td>${s.Music_director}</td>
+            <td>${s.Singer}</td>
+            <td>${s.Actor}</td>
+            <td>${s.Actress}</td>
         </tr>
-        ${songs.map(s => `<tr><td>${s.Songname}</td><td>${s.Film}</td><td>${s.Music_director}</td><td>${s.Singer}</td><td>${s.Actor}</td><td>${s.Actress}</td></tr>`).join('')}
-    </table><br><a href="/">Back to Dashboard</a>`;
+    `).join(''); // Join the array of rows into a single string
+
+    // Combine everything into the final HTML structure
+    const html = `
+        <h3>${message}</h3>
+        <table border="1" style="width:100%; border-collapse: collapse;">
+            <thead>
+                <tr style="background-color: #eee;">
+                    <th>Song</th>
+                    <th>Film</th>
+                    <th>Director</th>
+                    <th>Singer</th>
+                    <th>Actor</th>
+                    <th>Actress</th>
+                </tr>
+            </thead>
+            <tbody>
+                ${tableRows}
+            </tbody>
+        </table>
+        <br>
+        <a href="/">Back to Dashboard</a>
+    `;
+
     res.send(html);
 };
 

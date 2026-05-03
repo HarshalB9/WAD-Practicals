@@ -1,0 +1,77 @@
+# 1. Initialize the project (creates package.json)
+npm init -y
+
+# 2. Install necessary dependencies
+npm install express mongoose
+
+-----------------------------
+
+The Linux "Check & Run" Workflow
+The Check: Open a terminal and type mongosh.
+
+If it enters the shell, you're golden. Type exit and start your Node app.
+
+If it says Connection Refused, proceed to step 2.
+
+The Server: Open a new terminal tab/window and run:
+
+Bash
+mongod
+Note: If it fails with a "Permission Denied" error regarding a /data/db folder, you might need to run sudo mongod (if you have permissions) or specify a local folder using mongod --dbpath ./data.
+
+The Node App: Open a third terminal for your project:
+
+Bash
+cd music-app
+node app.js
+
+-----------------------------
+
+1. Accessing MongoDB via Terminal
+Open your Command Prompt or Terminal and type:
+
+Bash
+mongosh
+If you see a prompt like test>, you are successfully connected to your local MongoDB instance.
+
+2. How to see and manage Databases
+Once inside the mongosh shell, use these commands:
+
+List all databases:
+
+Bash
+show dbs
+Switch to your database:
+
+Bash
+use music
+List collections (tables) in that database:
+
+Bash
+show collections
+(You should see songdetails once your Node.js code runs).
+
+3. How to see the Data (Documents)
+To see the songs you inserted via your Node.js app, run:
+
+JavaScript
+db.songdetails.find()
+To make the output readable (formatted), use:
+
+JavaScript
+db.songdetails.find().pretty()
+
+
+-----------------------------
+
+
+1. Delete the Database
+First, you must be "inside" the database to delete it.
+
+JavaScript
+// 1. Switch to the music database
+use music
+
+// 2. Drop (delete) the entire database
+db.dropDatabase()
+Confirmation: You should see a message like { "ok" : 1, "dropped" : "music" }.

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Songs Project</title>
+</head>
+<body>
+
+<h1>Songs Project</h1>
+
+<a href="/music/init">Initialize/Reset DB</a> | 
+<a href="/music/all">View all songs</a>
+
+<h3>Search song(film, director, singer)</h3>
+<form action="/music/search" method="get">
+    <input name="film" placeholder="Film">
+    <input name="director" placeholder="Director">
+    <input name="singer" placeholder="Singer">
+    <button type="submit">Search</button>
+    <br>
+    <a href="/">Go to Dashboard</a>
+</form>
+
+<h3>Delete a song</h3>
+<form action="/music/delete" method="post">
+    <input name="songname" placeholder="Song Name" required>
+    <button type="submit">Delete song</button>
+    <br>
+    <a href="/">Go to Dashboard</a>
+</form>
+
+<h3>Add a song</h3>
+<form action="/music/add" method="post">
+    <input name="Name" placeholder="Name" required>
+    <input name="Film" placeholder="Film" required>
+    <input name="Director" placeholder="Director" required>
+    <input name="Singer" placeholder="Singer" required>
+    <button type="submit">Add song</button>
+    <br>
+    <a href="/">Go to Dashboard</a>
+</form>
+
+<h3>Update Actor/Actress</h3>
+<form action="/music/update" method="post">
+    <input name="songname" placeholder="Song Name" required>
+    <input name="actor" placeholder="Actor name">
+    <input name="actress" placeholder="Actress name">
+    <button type="submit">Update Cast</button>
+    <br>
+    <a href="/">Go to Dashboard</a>
+</form>
+    
+</body>
+</html>
