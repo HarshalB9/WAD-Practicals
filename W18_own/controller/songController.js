@@ -59,6 +59,8 @@ exports.listAll = async(req, res) => {
     renderTable(res, songs, `Total songs: ${songs.length}`);
 };
 
+//GET METHOD ASEL TAR req.query (mhanje, init, viewAll, search, yachya sathi get method, mhanje req.query)
+//POST METHOD ASEL TAR req.body (mhanje update, add, delete, yachya sathi post method, mhanje req.body)
 exports.searchSong = async(req, res) => {
     const {film, director, singer} = req.query;
     let query = {};

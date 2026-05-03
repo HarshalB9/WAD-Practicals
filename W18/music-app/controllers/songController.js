@@ -70,6 +70,8 @@ exports.listAll = async (req, res) => {
 };
 
 // e, f, i) Search/Filter
+//GET METHOD ASEL TAR req.query (mhanje, init, viewAll, search, yachya sathi get method, mhanje req.query)
+//POST METHOD ASEL TAR req.body (mhanje update, add, delete, yachya sathi post method, mhanje req.body)
 exports.searchSongs = async (req, res) => {
     const { director, singer, film } = req.query;
     let query = {};

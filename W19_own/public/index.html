@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+</head>
+<body>
+
+<h1>Student Management System</h1>
+
+<a href="/marks/init">1. Initialize marks</a> | 
+<a href="/marks/all">2. Show all students marks</a>
+
+<h3>1. Students who score more than x marks in selected subjects</h3>
+<form action="/marks/greater" method="get">
+<input type="number" name="x" placeholder="Marks" min="1" max="100" required>
+<br><br>
+<label><input type="checkbox" name="subjects" value="WADmarks" placeholder="WAD">WAD</label>
+<label><input type="checkbox" name="subjects" value="CCmarks" placeholder="CC">CC</label>
+<label><input type="checkbox" name="subjects" value="DSBDAmarks" placeholder="DSBDA">DSBDA</label>
+<label><input type="checkbox" name="subjects" value="CNSmarks" placeholder="CNS">CNS</label>
+<label><input type="checkbox" name="subjects" value="AImarks" placeholder="AI">AI</label>
+<br><br>
+<button type="submit">Submit</button>
+</form>
+
+<h3>2. Students who score less than x marks in selected subjects</h3>
+<form action="/marks/less" method="get">
+<input type="number" name="x" placeholder="Marks" min="1" max="100" required>
+<br><br>
+<label><input type="checkbox" name="subjects" value="WADmarks" placeholder="WAD">WAD</label>
+<label><input type="checkbox" name="subjects" value="CCmarks" placeholder="CC">CC</label>
+<label><input type="checkbox" name="subjects" value="DSBDAmarks" placeholder="DSBDA">DSBDA</label>
+<label><input type="checkbox" name="subjects" value="CNSmarks" placeholder="CNS">CNS</label>
+<label><input type="checkbox" name="subjects" value="AImarks" placeholder="AI">AI</label>
+<br><br>
+<button type="submit">Submit</button>
+</form>
+
+
+<h3>3. Add new student record</h3>
+<form action="/marks/add" method="post"> 
+<input name="Name" placeholder="Name" required>
+<input type="number" name="Rollno" placeholder="Roll no." required>
+<br><br>
+<input type="number" name="WADmarks" placeholder="WAD marks" required>
+<input type="number" name="CCmarks" placeholder="CC marks" required>
+<input type="number" name="DSBDAmarks" placeholder="DSBDA marks" required>
+<input type="number" name="CNSmarks" placeholder="CNS marks" required>
+<input type="number" name="AImarks" placeholder="AI marks" required>
+<br><br>
+<button type="submit">Add student</button>
+</form>
+
+<h3>4. Update marks</h3>
+<form action="/marks/update" method="post">
+<input type="number" name="rollno" placeholder="Roll no." required>
+<input type="number" name="x" placeholder="New Marks" required>
+<br><br>
+<label><input type="radio" name="subject" value="WADmarks" placeholder="WAD">WAD</label>
+<label><input type="radio" name="subject" value="CCmarks" placeholder="CC">CC</label>
+<label><input type="radio" name="subject" value="DSBDAmarks" placeholder="DSBDA">DSBDA</label>
+<label><input type="radio" name="subject" value="CNSmarks" placeholder="CNS">CNS</label>
+<label><input type="radio" name="subject" value="AImarks" placeholder="AI">AI</label>
+<br><br>
+<button type="submit">Update</button>
+</form>
+
+<h3>5. Delete student record</h3>
+<form action="/marks/delete" method="post">
+<input name="name" placeholder="Student name (optional)">
+<input type="number" name="rollno" placeholder="Roll no. (optional)">
+<br><br>
+<button type="submit">Delete</button>
+</form>
+
+</body>
+</html>

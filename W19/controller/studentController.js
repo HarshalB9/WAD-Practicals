@@ -39,11 +39,34 @@ const renderTable = async (res, students, message = '') => {
 };
 
 const normalizeSubjects = (subjects) => {
-    if (!subjects) return [];
-    if (Array.isArray(subjects)) return subjects;
-    return [subjects];
+    if (!subjects) return [];  //no subjects selected -> "subjects" will be null or undefined -> return empty array
+    if (Array.isArray(subjects)) return subjects;  //multiple subjects selected -> "subjects" will be array by default, return as it is.
+    return [subjects]; // single subject selected -> "subjects" will be a string -> convert to array
 };
 
+// const filterByMarks = async (req, res, comparator) => {
+//     const x = Number(req.query.x);
+//     const subjects = normalizeSubjects(req.query.subjects);
+
+//     if (!subjects.length || Number.isNaN(x)) {
+//         return renderTable(res, [], 'Please provide marks and at least one subject.');
+//     }
+
+//     const andConditions = subjects.map(subject => ({
+//         [subject]: comparator === 'gt' ? { $gt: x } : { $lt: x }
+//     }));
+
+//     const students = await Student.find({ $and: andConditions });
+//     const message = comparator === 'gt'
+//         ? `Students scoring more than ${x} in selected subjects.`
+//         : `Students scoring less than ${x} in selected subjects.`;
+
+//     renderTable(res, students, message);
+// };
+
+
+//GET METHOD ASEL TAR req.query (mhanje, init, viewAll, search, yachya sathi get method, mhanje req.query)
+//POST METHOD ASEL TAR req.body (mhanje update, add, delete, yachya sathi post method, mhanje req.body)
 const filterByMarks = async (req, res, comparator) => {
     const x = Number(req.query.x);
     const subjects = normalizeSubjects(req.query.subjects);
@@ -52,16 +75,38 @@ const filterByMarks = async (req, res, comparator) => {
         return renderTable(res, [], 'Please provide marks and at least one subject.');
     }
 
-    const andConditions = subjects.map(subject => ({
-        [subject]: comparator === 'gt' ? { $gt: x } : { $lt: x }
-    }));
+    // 1. Fetch every single student from the database
+    const allStudents = await Student.find();
+    
+    // 2. This array will hold only the students who pass our test
+    const filteredStudents = [];
 
-    const students = await Student.find({ $and: andConditions });
+    // 3. Manually loop through each student
+    for (let student of allStudents) {
+        let isMatch = true;
+
+        // Check each selected subject for this student
+        for (let subject of subjects) {
+            const marks = student[subject];
+
+            if (comparator === 'gt') {
+                if (!(marks > x)) isMatch = false; // Fails if marks NOT greater than x
+            } else {
+                if (!(marks < x)) isMatch = false; // Fails if marks NOT less than x
+            }
+        }
+
+        // 4. If they passed the check for ALL subjects, add them to our list
+        if (isMatch) {
+            filteredStudents.push(student);
+        }
+    }
+
     const message = comparator === 'gt'
         ? `Students scoring more than ${x} in selected subjects.`
         : `Students scoring less than ${x} in selected subjects.`;
 
-    renderTable(res, students, message);
+    renderTable(res, filteredStudents, message);
 };
 
 exports.initDB = async (req, res) => {
@@ -95,56 +140,57 @@ exports.lessThanMarks = async (req, res) => {
 };
 
 exports.addStudent = async (req, res) => {
-    const student = {
-        Name: req.body.Name,
-        Roll_No: Number(req.body.Roll_No),
-        WAD_Marks: Number(req.body.WAD_Marks),
-        CC_Marks: Number(req.body.CC_Marks),
-        DSBDA_Marks: Number(req.body.DSBDA_Marks),
-        CNS_Marks: Number(req.body.CNS_Marks),
-        AI_marks: Number(req.body.AI_marks)
-    };
+    // const student = {
+    //     Name: req.body.Name,
+    //     Roll_No: Number(req.body.Roll_No),
+    //     WAD_Marks: Number(req.body.WAD_Marks),
+    //     CC_Marks: Number(req.body.CC_Marks),
+    //     DSBDA_Marks: Number(req.body.DSBDA_Marks),
+    //     CNS_Marks: Number(req.body.CNS_Marks),
+    //     AI_marks: Number(req.body.AI_marks)
+    // };
 
-    const hasInvalidMarks = [
-        student.Roll_No,
-        student.WAD_Marks,
-        student.CC_Marks,
-        student.DSBDA_Marks,
-        student.CNS_Marks,
-        student.AI_marks
-    ].some(value => Number.isNaN(value));
+    // const hasInvalidMarks = [
+    //     student.Roll_No,
+    //     student.WAD_Marks,
+    //     student.CC_Marks,
+    //     student.DSBDA_Marks,
+    //     student.CNS_Marks,
+    //     student.AI_marks
+    // ].some(value => Number.isNaN(value));
 
-    if (!student.Name || hasInvalidMarks) {
-        return renderTable(res, [], 'Please provide all student details with valid marks.');
-    }
+    // if (!student.Name || hasInvalidMarks) {
+    //     return renderTable(res, [], 'Please provide all student details with valid marks.');
+    // }
 
-    await Student.create(student);
+    // await Student.create(student);
+    await Student.create(req.body);
 
     const students = await Student.find();
     renderTable(res, students, 'Student record added successfully.');
 };
 
 exports.updateMarks = async (req, res) => {
-    const studentName = req.body.studentName;
+    const rollNo = Number(req.body.rollNo);
     const subject = req.body.subject;
     const newMarks = Number(req.body.newMarks);
 
-    if (!studentName || !subject || Number.isNaN(newMarks)) {
-        return renderTable(res, [], 'Please provide student name, subject, and marks.');
+    if (Number.isNaN(rollNo) || !subject || Number.isNaN(newMarks)) {
+        return renderTable(res, [], 'Please provide roll number, subject, and marks.');
     }
 
-    const result = await Student.updateMany(
-        { Name: studentName },
+    const result = await Student.updateOne(
+        { Roll_No: rollNo },
         { $set: { [subject]: newMarks } }
     );
 
     const students = await Student.find();
 
     if (result.matchedCount === 0) {
-        return renderTable(res, students, `No student found with name: ${studentName}`);
+        return renderTable(res, students, `No student found with roll number: ${rollNo}`);
     }
 
-    renderTable(res, students, `Marks updated for ${studentName}.`);
+    renderTable(res, students, `Marks updated for roll number ${rollNo}.`);
 };
 
 exports.deleteStudent = async (req, res) => {
