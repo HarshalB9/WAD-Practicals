@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: true}));
 //hnh
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-})
+});
 
 app.use('/music', songRoutes);
 

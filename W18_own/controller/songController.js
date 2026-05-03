@@ -1,6 +1,9 @@
 const Song = require('../model/Song');
 
 const renderTable = async(res, songs, message = "") => {
+
+    //hnh -> wrote forEach instead of map
+    // no {} after =>
     const tableRows = songs.map(s => `
         <tr>
             <td>${s.Name}</td>
@@ -75,6 +78,7 @@ exports.deleteSong = async(req, res) => {
     const songs = await Song.find();
 
     if(result.deletedCount === 0){
+        //hnh - returned result instead of songs
         return renderTable(res, songs, `No song found with name: ${req.body.songname}`);
     }
 
@@ -98,6 +102,7 @@ exports.updateCast = async(req, res) => {
     const songs = await Song.find();
 
     if(result.matchedCount === 0){
+        //hnh - returned result instead of songs
         return renderTable(res, songs, `No song found with name: ${req.body.songname}`);
     }
 
