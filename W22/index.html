@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PICT Mobile Portal</title>
+    <!-- Essential for mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Local File Links (Ensure filenames match your folder exactly) -->
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <!-- PAGE 1: HOME / ABOUT US -->
+    <div data-role="page" id="about" data-theme="a">
+        <div data-role="header" data-add-back-btn="false">
+            <h1>PICT Pune</h1>
+            <!-- Navigation Bar -->
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" class="ui-btn-active ui-state-persist" data-icon="info">About</a></li>
+                    <li><a href="#courses" data-transition="slide" data-icon="grid">Courses</a></li>
+                    <li><a href="#contact" data-transition="slide" data-icon="phone">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <h2>About PICT</h2>
+            <p>Pune Institute of Computer Technology (PICT) is a pioneer in the field of Computer Engineering and Information Technology education in India.</p>
+            
+            <!-- Collapsible Content for Departments -->
+            <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+                <h3>Our Departments</h3>
+                <ul data-role="listview">
+                    <li>Computer Engineering</li>
+                    <li>Information Technology</li>
+                    <li>Electronics & Telecommunication</li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>© 2026 PICT Portal</h4>
+        </div>
+    </div>
+
+    <!-- PAGE 2: COURSES OFFERED -->
+    <div data-role="page" id="courses">
+        <div data-role="header">
+            <h1>Courses</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" data-transition="slide" data-direction="reverse" data-icon="info">About</a></li>
+                    <li><a href="#courses" class="ui-btn-active ui-state-persist" data-icon="grid">Courses</a></li>
+                    <li><a href="#contact" data-transition="slide" data-icon="phone">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h2>Undergraduate Courses (B.E.)</h2>
+                
+                    <div data-role="collapsible" data-theme="b" data-content-theme="a">
+                        <h3>Computer Engineering</h3>
+                        <p>Intake: 240 Students. Focuses on software, hardware, and networking.</p>
+                    </div>
+
+                <div data-role="collapsible" data-theme="b" data-content-theme="a">
+                    <h3>Information Technology</h3>
+                    <p>Intake: 180 Students. Focuses on data management, security, and web tech.</p>
+                </div>
+
+                <div data-role="collapsible" data-theme="b" data-content-theme="a">
+                    <h3>E & TC Engineering</h3>
+                    <p>Intake: 240 Students. Focuses on communication systems and electronics.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>PICT Academics</h4>
+           
+        </div>
+    </div>
+
+    <!-- PAGE 3: CONTACT INFORMATION -->
+    <div data-role="page" id="contact">
+        <div data-role="header">
+            <h1>Contact Us</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" data-transition="slide" data-direction="reverse" data-icon="info">About</a></li>
+                    <li><a href="#courses" data-transition="slide" data-direction="reverse" data-icon="grid">Courses</a></li>
+                    <li><a href="#contact" class="ui-btn-active ui-state-persist" data-icon="phone">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h3>College Address</h3>
+                <p>Survey No. 27, Near Trimurti Chowk,<br>
+                Dhankawadi, Pune - 411043</p>
+                
+                <hr>
+                
+                <p><strong>Email:</strong> principal@pict.edu</p>
+                <p><strong>Phone:</strong> +91 20 24371101</p>
+            </div>
+            
+            <a href="tel:+912024371101" class="ui-btn ui-icon-phone ui-btn-icon-left ui-corner-all">Call Now</a>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>Visit PICT</h4>
+        </div>
+    </div>
+
+</body>
+</html>

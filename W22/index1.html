@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PICT Portal</title>
+
+    <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+    <script src="jquery.min.js"></script>
+    <script src="jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <!-- 
+    
+    role ani id always together
+    <div data-role="page" id="about">
+
+
+    Keep 3 sections in every page: Header, Main, Footer
+
+
+    header -> some heading -> then data-role="navbar" -> navbar is just unordered list -> every li is an anchor tag
+
+    Everything starting with ui is a class, not data-role
+    e.g. class="ui-btn-active ui-state-persist"
+    class="ui-body ui-body-a ui-corner-all"
+
+
+    Treat this as one unit
+    <div data-role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all">
+
+
+
+    Write position="fixed" with footer always
+    <div data-role="footer" data-position="fixed">
+    
+    -->
+
+    <!-- Page 1 - About -->
+    <div data-role="page" id="about">
+
+        <div data-role="header">
+            <h3>PICT Pune</h3>
+
+            <div data-role="navbar">
+                <ul>
+                    <!-- hnh : ui-btn-active is a class -->
+                    <li><a href="#about" class="ui-btn-active ui-state-persist" data-icon="info">About</a></li>
+                    <li><a href="#courses" data-transition="slide" data-icon="grid">Courses</a></li>
+                    <li><a href="#contact" data-transition="slide" data-icon="phone">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h1>Pune Institute of Computer Technology</h1>
+
+                <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+                    <h3>Our Departments</h3>
+
+                    <ul data-role="listview">
+                        <li>CE</li>
+                        <li>IT</li>
+                        <li>AIDS</li>
+                        <li>ENTC</li>
+                        <li>ECE</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h3>@2026 PICT Portal</h3>
+        </div>
+    </div>
+
+
+    <!-- Page 2 - Courses -->
+    <div data-role="page" id="courses">
+        <div data-role="header">
+            <h2>Courses</h2>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" data-transition="slide" data-direction="reverse" data-icon="info">About</a></li>
+                    <li><a href="#courses" class="ui-btn-active ui-state-persist" data-icon="grid">Courses</a></li>
+                    <li><a href="#contact" data-transition="slide" data-icon="phone">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h1>Undergraduate Courses (B.E.)</h1>
+
+                <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+                    <h2>CE</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, accusamus.</p>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+                    <h2>IT</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, accusamus.</p>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+                    <h2>AIDS</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, accusamus.</p>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+                    <h2>ECE</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, accusamus.</p>
+                </div>
+                <div data-role="collapsible" data-collapsed-icon="carat-r" data-expanded-icon="carat-d">
+                    <h2>ENTC</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, accusamus.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h3>@2026 PICT Portal</h3>
+        </div>
+    </div>
+
+
+
+    <!-- Page 3 - Contact -->
+    <div data-role="page" id="contact">
+        <div data-role="header">
+            <h3>Contact</h3>
+
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" data-transition="slide" data-direction="reverse" data-icon="info">About</a></li>
+                    <li><a href="#courses" data-transition="slide" data-direction="reverse" data-icon="grid">Courses</a></li>
+                    <li><a href="#contact" class="ui-btn-active ui-state-persist" data-icon="phone">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <div class="ui-body ui-body-a ui-corner-all">
+                <h2>Contact us</h2>
+                <p>+91 123456789</p>
+                <p>pict@gmail.com</p>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h2>2026 PICT Portal</h2>
+        </div>
+    </div>
+
+
+    
+</body>
+</html>
