@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Weather</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Weather App</h1>
+
+<div>
+    <input type="text" id="cityinput" placeholder="Enter City Name">
+    <button type="submit" id="submitBtn">Search Weather</button>
+</div>
+
+<p id="status"></p>
+
+<div id="weathercard" class="card hidden">
+    <div>
+        <span>City</span>
+        <span id="city"></span>
+    </div>
+    <div>
+        <span>Temp</span>
+        <span id="temp"></span>
+    </div>
+    <div>
+        <span>Humidity</span>
+        <span id="humidity"></span>
+    </div>
+    <div>
+        <span>Condition</span>
+        <span id="condition"></span>
+    </div>
+</div>
+    
+
+<script src="script.js"></script>
+</body>
+</html>

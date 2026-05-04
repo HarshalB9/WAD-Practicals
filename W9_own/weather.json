@@ -1,0 +1,10 @@
+[
+  { "city": "Mumbai", "temperature": 32, "humidity": 78, "conditions": "Partly Cloudy" },
+  { "city": "Pune", "temperature": 28, "humidity": 62, "conditions": "Clear" },
+  { "city": "Delhi", "temperature": 35, "humidity": 55, "conditions": "Haze" },
+  { "city": "Bengaluru", "temperature": 26, "humidity": 70, "conditions": "Light Rain" },
+  { "city": "Chennai", "temperature": 33, "humidity": 80, "conditions": "Humid" },
+  { "city": "Kolkata", "temperature": 31, "humidity": 74, "conditions": "Overcast" },
+  { "city": "Jaipur", "temperature": 36, "humidity": 40, "conditions": "Sunny" },
+  { "city": "Hyderabad", "temperature": 30, "humidity": 60, "conditions": "Clear" }
+]
