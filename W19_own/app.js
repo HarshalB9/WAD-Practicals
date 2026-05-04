@@ -8,6 +8,8 @@ const app = express();
 connectDB();
 
 app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));

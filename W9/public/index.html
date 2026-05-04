@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App (AJAX)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1>Local Weather Lookup</h1>
+        <p class="subtitle">Search a city to get temperature, humidity, and conditions.</p>
+
+        <div class="search">
+            <input id="cityInput" type="text" placeholder="Enter city name" autocomplete="off">
+            <button id="searchBtn">Get Weather</button>
+        </div>
+
+        <p id="status" class="status"></p>
+
+        <div id="weatherCard" class="card hidden">
+            <h2 id="cityName"></h2>
+            <div class="details">
+                <div>
+                    <span class="label">Temperature</span>
+                    <span id="tempValue" class="value"></span>
+                </div>
+                <div>
+                    <span class="label">Humidity</span>
+                    <span id="humidityValue" class="value"></span>
+                </div>
+                <div>
+                    <span class="label">Conditions</span>
+                    <span id="conditionValue" class="value"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

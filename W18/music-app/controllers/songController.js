@@ -13,6 +13,7 @@ const Song = require('../models/Song');
 
 const renderTable = async (res, songs, message = "") => {
     // Generate the table rows by mapping through the songs array
+    // const dateText = s.joiningDate ? new Date(s.joiningDate).toISOString().slice(0, 10) : 'N/A';
     const tableRows = songs.map(s => `
         <tr>
             <td>${s.Songname}</td>

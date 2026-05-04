@@ -9,6 +9,7 @@ connectDB();
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // Serve the HTML file
 app.get('/', (req, res) => {

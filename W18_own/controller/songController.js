@@ -4,6 +4,7 @@ const renderTable = async(res, songs, message = "") => {
 
     //hnh -> wrote forEach instead of map
     // no {} after =>
+    // const dateText = s.joiningDate ? new Date(s.joiningDate).toISOString().slice(0, 10) : 'N/A';
     const tableRows = songs.map(s => `
         <tr>
             <td>${s.Name}</td>
